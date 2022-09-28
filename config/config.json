@@ -1,0 +1,15 @@
+{
+    "development": {
+      "database": "express",
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "test": {
+      "database": "express",
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "production": {
+      "use_env_variable": "DATABASE_URL"
+    }
+  }
