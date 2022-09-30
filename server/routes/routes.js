@@ -55,12 +55,14 @@ const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
 const UserControllers = require("../controller/userController");
 const AdminControllers = require("../controller/adminController");
 const NewsControllers = require("../controller/newsCantroller");
+const ContactControllers = require("../controller/contactsControllers");
 
 // // Routes
 
 router.get("/users_tb",UserControllers.users_tb);
 router.get("/admin_tb",AdminControllers.admin_tb);
 router.get("/news_tb",NewsControllers.news_tb);
+router.get("/contacts_tb",ContactControllers.contacts_tb);
 
 
 
@@ -90,6 +92,11 @@ router.patch("/news/update",NewsControllers.update);
 router.post("/news/update/file",NewsControllers.updateFile)
 router.delete("/news/delete/:id",NewsControllers.Delete);
 
+
+// Send Mail
+router.post("/contact/send",ContactControllers.ContactSend);
+router.post("/contact/response",ContactControllers.SendResponse);
+router.delete("/contact/delete/:id",ContactControllers.Delete);
 
 // For Token
 
