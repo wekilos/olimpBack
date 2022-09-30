@@ -17,8 +17,7 @@ const Op = Sequelize.Op;
         return data;
       })
       .catch((err) => {
-        return err;
-        console.log("connection connected");
+        return err; 
       });
     res.json(response);
   };

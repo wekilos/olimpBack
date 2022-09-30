@@ -56,14 +56,16 @@ const UserControllers = require("../controller/userController");
 const AdminControllers = require("../controller/adminController");
 const NewsControllers = require("../controller/newsCantroller");
 const ContactControllers = require("../controller/contactsControllers");
-
+const OrderControllers = require("../controller/ordersController");
+const OrderDocControllers = require("../controller/orderDocsController");
 // // Routes
 
 router.get("/users_tb",UserControllers.users_tb);
 router.get("/admin_tb",AdminControllers.admin_tb);
 router.get("/news_tb",NewsControllers.news_tb);
 router.get("/contacts_tb",ContactControllers.contacts_tb);
-
+router.get("/order_tb",OrderControllers.orders_tb);
+router.get("/orderDoc_tb",OrderDocControllers.orderDocs_tb);
 
 
 // User Routes
@@ -97,6 +99,11 @@ router.delete("/news/delete/:id",NewsControllers.Delete);
 router.post("/contact/send",ContactControllers.ContactSend);
 router.post("/contact/response",ContactControllers.SendResponse);
 router.delete("/contact/delete/:id",ContactControllers.Delete);
+
+
+// Order 
+router.post("/order/create",OrderControllers.createOrder);
+
 
 // For Token
 

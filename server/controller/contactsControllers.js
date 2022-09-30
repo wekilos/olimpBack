@@ -14,8 +14,7 @@ const contacts_tb = async (req, res) => {
         return data;
       })
       .catch((err) => {
-        return err;
-        console.log("connection connected");
+        return err; 
       });
     res.json(response);
   };
