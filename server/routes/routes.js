@@ -102,7 +102,12 @@ router.delete("/contact/delete/:id",ContactControllers.Delete);
 
 
 // Order 
+router.get("/order/all",OrderControllers.getAllOrders);
 router.post("/order/create",OrderControllers.createOrder);
+router.post("/order/make",OrderControllers.makeOrder);
+router.post("/order/payment",OrderControllers.makePayment);
+router.patch("/order/cancel/:id",OrderControllers.CancelOrder);
+router.patch("/order/disCancel/:id",OrderControllers.DisCancelOrder);
 
 
 // For Token
