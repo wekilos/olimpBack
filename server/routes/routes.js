@@ -58,6 +58,7 @@ const NewsControllers = require("../controller/newsCantroller");
 const ContactControllers = require("../controller/contactsControllers");
 const OrderControllers = require("../controller/ordersController");
 const OrderDocControllers = require("../controller/orderDocsController");
+const UserCodesControllers = require("../controller/userCodesController");
 // // Routes
 
 router.get("/users_tb",UserControllers.users_tb);
@@ -66,6 +67,7 @@ router.get("/news_tb",NewsControllers.news_tb);
 router.get("/contacts_tb",ContactControllers.contacts_tb);
 router.get("/order_tb",OrderControllers.orders_tb);
 router.get("/orderDoc_tb",OrderDocControllers.orderDocs_tb);
+router.get("/userCodes_tb",UserCodesControllers.userCodes_tb);
 
 
 // User Routes
@@ -74,8 +76,12 @@ router.get("/orderDoc_tb",OrderDocControllers.orderDocs_tb);
 router.post("/user/create",UserControllers.create);
 router.post("/user/login",UserControllers.login);
 router.patch("/user/update",UserControllers.update);
+router.patch("/user/forgot",UserControllers.forgot);
 router.patch("/user/disActive/:id",UserControllers.disActive);
 router.patch("/user/Active/:id",UserControllers.Active);
+
+router.post("/send/code",UserCodesControllers.SendCode);
+router.post("/check/code",UserCodesControllers.CheckCode);
 
 //   Admin Routers
 router.post("/admin/create",AdminControllers.create);

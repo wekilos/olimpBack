@@ -102,7 +102,7 @@ const Op = Sequelize.Op;
   }).then(async(data)=>{
    
     if(!data.active){
-      res.json("Siz DisActive edilen!")
+      res.json({msg:"Siz DisActive edilen!"})
       return 0;
     }
 
@@ -150,7 +150,10 @@ const Op = Sequelize.Op;
       companyName,} = req.body;
 
      
-   
+      const user = Users.findOne({where:{id:id}});
+      if(!user){
+        res.json("Bu Id boyuncha User yok1")
+      }
       const salt = bcrypt.genSaltSync();
       bcrypt.hash(password, salt, (err, hashpassword) => {
         if (err) {
@@ -163,15 +166,34 @@ const Op = Sequelize.Op;
             phoneNumber,
             password:hashpassword,
             companyName,
-        active:true,
-        deleted:false,
+            active:true,
+            deleted:false,
       },{
         where:{
           id:id
         }
       }).then(async(data) => {
-        
-      res.json("updated")
+
+        jwt.sign(
+          {
+            id: user.id,
+            name: user.fname,
+            phoneNumber:user.phoneNumber,
+            email:user.email
+          },
+          Func.Secret(),
+          (err, token) => {
+            res.status(200).json({
+              msg: "Suссessfully",
+              token: token,
+              id:user.id,
+              name: user.fname,
+              phoneNumber:user.phoneNumber,
+              email:user.email
+            });
+          }
+        );
+      // res.json("updated")
         
       }).catch((err) => {
         console.log(err);
@@ -183,6 +205,65 @@ const Op = Sequelize.Op;
 
     }
 
+
+    const forgot = async (req, res) => {
+  
+      const {
+        password,
+        email} = req.body;
+  
+       
+        const user = await Users.findOne({where:{email:email}});
+        if(!user){
+          res.json("Bu Id boyuncha User yok1")
+        }
+        const salt = bcrypt.genSaltSync();
+        bcrypt.hash(password, salt, (err, hashpassword) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ msg: "Error", err: err });
+          } else {
+  
+            Users.update({
+              password:hashpassword,
+              active:true,
+              deleted:false,
+        },{
+          where:{
+            email:email
+          }
+        }).then(async(data) => {
+  
+          jwt.sign(
+            {
+              id: user.id,
+              name: user.fname,
+              phoneNumber:user.phoneNumber,
+              email:user.email
+            },
+            Func.Secret(),
+            (err, token) => {
+              res.status(200).json({
+                msg: "Suссessfully",
+                token: token,
+                id:user.id,
+                name: user.fname,
+                phoneNumber:user.phoneNumber,
+                email:user.email
+              });
+            }
+          );
+        // res.json("updated")
+          
+        }).catch((err) => {
+          console.log(err);
+          res.json("create user",err)
+        });
+  
+      }
+    });
+  
+      }
 
     const disActive = async(req,res)=>{
       const { id } = req.params;
@@ -236,5 +317,6 @@ const Op = Sequelize.Op;
   exports.create = create;
   exports.login = login;
   exports.update = update;
+  exports.forgot = forgot;
   exports.disActive = disActive;
   exports.Active = Active;
