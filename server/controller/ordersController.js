@@ -46,10 +46,38 @@ const orders_tb = async (req, res) => {
     })
   }
 
+  const getAllOrdersOneUser = async(req,res)=>{
+    const {UserId} = req.params;
+    Orders.findAll({
+        include:[
+            {
+                model:OrderDocs,
+                attributes:["id","title","fileName","active","OrderId"]
+            }
+        ],
+        
+            where:{
+                UserId:UserId
+            },
+        
+        order: [
+            ['id', 'DESC'],
+        ]
+    }).then((data)=>{
+        res.send(data);
+    }).catch((err)=>{
+        console.log(err);
+        res.json(err);
+    })
+  }
+
+
   const createOrder = async(req,res)=>{
     const { fname, lname, message,userId } = req.body;
+    console.log("filessss===>>>>>>",req.files.files)
     const  files  = req.files.files.constructor===Array ? req.files.files : [req.files.files];
-    console.log(files);
+    console.log("filessss>>>>>>",typeof(files))
+    console.log("files",files);
     if(files.length>0){
         Orders.create({
             fname,
@@ -64,6 +92,7 @@ const orders_tb = async (req, res) => {
             deleted:false
         }).then((data)=>{
             files?.map((file,i)=>{
+                console.log("file",file)
                 let randomNumber = Math.floor(Math.random() * 999999999999);
                 let fileDirection = `./uploads/`+randomNumber+`${file.name}`;
                 fs.writeFile(fileDirection, file.data, function(err) { console.log(err) });
@@ -235,6 +264,7 @@ const DisCancelOrder = async(req,res)=>{
 
   exports.orders_tb = orders_tb;
   exports.getAllOrders = getAllOrders;
+  exports.getAllOrdersOneUser = getAllOrdersOneUser;
   exports.createOrder = createOrder;
   exports.makeOrder = makeOrder;
   exports.makePayment = makePayment;

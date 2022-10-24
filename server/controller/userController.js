@@ -23,6 +23,40 @@ const Op = Sequelize.Op;
   };
 
 
+  const getAllUser = async(req,res)=>{
+
+    Users.findAll({
+      order: [
+        ['id', 'DESC'],
+    ]
+    }).then((data)=>{
+      res.json(data);
+    }).catch((err)=>{
+      console.log(err);
+      res.json({error:err});
+    })
+  }
+
+  const getOneUser = async(req,res)=>{
+    const { id } = req.params;
+    const user = await Users.findOne({where:{id:id}});
+    if(user){
+      Users.findOne({
+        where:{
+          id:id
+        }
+      }).then((data)=>{
+        res.json(data);
+      }).catch((err)=>{
+        console.log(err);
+        res.json({error:err});
+      })
+    }else{
+      res.send("BU ID boyuncha User yok!")
+    }
+  }
+
+
   const create = async (req, res) => {
   
     const {fname,
@@ -143,28 +177,23 @@ const Op = Sequelize.Op;
 
   const update = async (req, res) => {
   
-    const {fname,
+    const {
+      fname,
       phoneNumber,
       id,
-      password,
+      
       companyName,} = req.body;
 
      
       const user = Users.findOne({where:{id:id}});
       if(!user){
         res.json("Bu Id boyuncha User yok1")
-      }
-      const salt = bcrypt.genSaltSync();
-      bcrypt.hash(password, salt, (err, hashpassword) => {
-        if (err) {
-          console.log(err);
-          return res.status(500).json({ msg: "Error", err: err });
-        } else {
+      }else{ 
+       
 
           Users.update({
             fname, 
-            phoneNumber,
-            password:hashpassword,
+            phoneNumber, 
             companyName,
             active:true,
             deleted:false,
@@ -174,36 +203,18 @@ const Op = Sequelize.Op;
         }
       }).then(async(data) => {
 
-        jwt.sign(
-          {
-            id: user.id,
-            name: user.fname,
-            phoneNumber:user.phoneNumber,
-            email:user.email
-          },
-          Func.Secret(),
-          (err, token) => {
-            res.status(200).json({
-              msg: "Suссessfully",
-              token: token,
-              id:user.id,
-              name: user.fname,
-              phoneNumber:user.phoneNumber,
-              email:user.email
-            });
-          }
-        );
-      // res.json("updated")
+        
+       res.json("updated")
         
       }).catch((err) => {
         console.log(err);
         res.json("create user",err)
       });
 
-    }
-  });
+     
 
     }
+  };
 
 
     const forgot = async (req, res) => {
@@ -314,6 +325,8 @@ const Op = Sequelize.Op;
 
 
   exports.users_tb=users_tb;
+  exports.getAllUser = getAllUser;
+  exports.getOneUser = getOneUser;
   exports.create = create;
   exports.login = login;
   exports.update = update;

@@ -1,0 +1,1065 @@
+{
+	"info": {
+		"_postman_id": "d4835752-b273-4120-a781-7e579faa156c",
+		"name": "Demiryol Express",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "create Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fname\":\"wekil\",\n        \"lastname\":\"Yazgulyyew\",\n        \"phoneNumber\":\"99365085630\",\n        \"email\":\"wekilyazgulyyew2000@gmail.com\",\n        \"password\":\"hashpassword\",\n        \"admin\":true,\n        \"subAdmin\":true,\n        \"operator\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://95.85.122.39:8181/api/admin/create",
+							"protocol": "http",
+							"host": [
+								"95",
+								"85",
+								"122",
+								"39"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"admin",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"wekilyazgulyyew2000@gmail.com\",\n    \"password\":\"hashpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fname\":\"wekil\",\n        \"lastname\":\"Yazgulyyew\",\n        \"phoneNumber\":\"99365085630\",\n        \"id\":\"1\",\n        \"password\":\"hashpassword\",\n        \"admin\":true,\n        \"subAdmin\":true,\n        \"operator\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DisActived User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/disActive/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"disActive",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actived User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/Active/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"Active",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fname\":\"wekil\",\n        \"lastname\":\"Yazgulyyew\",\n        \"phoneNumber\":\"99365085630\",\n        \"email\":\"wekilyazgulyyew2000@gmail.com\",\n        \"password\":\"hashpassword\",\n        \"companyName\":\"companyName\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"wekilyazgulyyew2000@gmail.com\",\n    \"password\":\"hashpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"fname\":\"wekil\",\n        \"lastname\":\"Yazgulyyew\",\n        \"phoneNumber\":\"99365085630\",\n        \"id\":\"1\",\n        \"password\":\"hashpassword\",\n        \"companyName\":\"companyName\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DisActived User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/disActive/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"disActive",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actived User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/user/Active/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"Active",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "/Users/wekilos1902gmail.com/Downloads/148891074318695390.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/news/update/file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"news",
+								"update",
+								"file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "file update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title_tm",
+									"value": "title_tm",
+									"type": "text"
+								},
+								{
+									"key": "title_en",
+									"value": "title_en",
+									"type": "text"
+								},
+								{
+									"key": "title_ru",
+									"value": "title_ru",
+									"type": "text"
+								},
+								{
+									"key": "text_tm",
+									"value": "text_tm",
+									"type": "text"
+								},
+								{
+									"key": "text_en",
+									"value": "text_en",
+									"type": "text"
+								},
+								{
+									"key": "text_ru",
+									"value": "text_ru",
+									"type": "text"
+								},
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "/Users/wekilos1902gmail.com/Downloads/148891074318695390.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/news/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"news",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title_tm",
+									"value": "title_tmmmm",
+									"type": "text"
+								},
+								{
+									"key": "title_en",
+									"value": "title_ennnn",
+									"type": "text"
+								},
+								{
+									"key": "title_ru",
+									"value": "title_ruuuu",
+									"type": "text"
+								},
+								{
+									"key": "text_tm",
+									"value": "text_tmmmm",
+									"type": "text"
+								},
+								{
+									"key": "text_en",
+									"value": "text_ennnn",
+									"type": "text"
+								},
+								{
+									"key": "text_ru",
+									"value": "text_ruuuuu",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "3",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/news/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"news",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All News",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/news",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/news/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"news",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete News",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/news/delete/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"news",
+								"delete",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sendMail",
+			"item": [
+				{
+					"name": "send Mail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Barlag",
+									"type": "default"
+								},
+								{
+									"key": "text",
+									"value": "Size shu barlagy barlamagynyzy hayysh edyaris!",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "wekilyazgulyyew2000@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/contact/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"contact",
+								"send"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "\"text\"",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "subject",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send Mail Response",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Barlag",
+									"type": "default"
+								},
+								{
+									"key": "text",
+									"value": "Bolyar tiz arada barlarys!",
+									"type": "default"
+								},
+								{
+									"key": "messageId",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/contact/response",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"contact",
+								"response"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "\"text\"",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "subject",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send Mail Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subject",
+									"value": "Barlag",
+									"type": "default"
+								},
+								{
+									"key": "text",
+									"value": "Bolyar tiz arada barlarys!",
+									"type": "default"
+								},
+								{
+									"key": "messageId",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/contact/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"contact",
+								"delete",
+								"1"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "\"text\"",
+									"disabled": true
+								},
+								{
+									"key": "subject",
+									"value": "subject",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "get All Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/order/all?status=-1&active=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"order",
+								"all"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "-1",
+									"description": "status=1 bolanda taze gelen zayawkalar bolyar. status=2 bolanda kabul edilen zakazlar bolyar. status=3 bolanda tamamlanan zakazlar bolyar.\nstatus=4 bolanda Canceled zakazlar bolyar."
+								},
+								{
+									"key": "active",
+									"value": "false",
+									"description": "active=false bolsa Canceled zakazlar bolyar."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/wekilos1902gmail.com/Downloads/IMG_0001.JPG"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "fname",
+									"value": "fname",
+									"type": "default"
+								},
+								{
+									"key": "lname",
+									"value": "lname",
+									"type": "default"
+								},
+								{
+									"key": "message",
+									"value": "message",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/order/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"order",
+								"create"
+							],
+							"query": [
+								{
+									"key": "files",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filess",
+									"type": "file",
+									"src": "/Users/wekilos1902gmail.com/Downloads/счет №88 на сумму 10 000 долл.США.pdf"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "code",
+									"value": "12332122121212/2112/12",
+									"type": "default"
+								},
+								{
+									"key": "payBefore",
+									"value": "10000",
+									"type": "default"
+								},
+								{
+									"key": "payBeforeType",
+									"value": "USD",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/order/make",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"order",
+								"make"
+							],
+							"query": [
+								{
+									"key": "files",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make Order payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/wekilos1902gmail.com/Downloads/IMG_0001.JPG"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "payment",
+									"value": "10005",
+									"type": "default"
+								},
+								{
+									"key": "peymentType",
+									"value": "USD",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/order/payment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"order",
+								"payment"
+							],
+							"query": [
+								{
+									"key": "files",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel order",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/Users/wekilos1902gmail.com/Downloads/образец письма обр. (1).docx",
+										"/Users/wekilos1902gmail.com/Downloads/образец ЗАЯВКИ.docx",
+										"/Users/wekilos1902gmail.com/Downloads/образец письма обр. (2).docx"
+									]
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "fname",
+									"value": "fname",
+									"type": "default"
+								},
+								{
+									"key": "lname",
+									"value": "lname",
+									"type": "default"
+								},
+								{
+									"key": "message",
+									"value": "message",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/order/cancel/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"order",
+								"cancel",
+								"3"
+							],
+							"query": [
+								{
+									"key": "files",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DisCancel order",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/Users/wekilos1902gmail.com/Downloads/образец письма обр. (1).docx",
+										"/Users/wekilos1902gmail.com/Downloads/образец ЗАЯВКИ.docx",
+										"/Users/wekilos1902gmail.com/Downloads/образец письма обр. (2).docx"
+									]
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "fname",
+									"value": "fname",
+									"type": "default"
+								},
+								{
+									"key": "lname",
+									"value": "lname",
+									"type": "default"
+								},
+								{
+									"key": "message",
+									"value": "message",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8181/api/order/disCancel/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"api",
+								"order",
+								"disCancel",
+								"3"
+							],
+							"query": [
+								{
+									"key": "files",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create Tables",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://95.85.122.39:8181/api/news_tb",
+					"protocol": "http",
+					"host": [
+						"95",
+						"85",
+						"122",
+						"39"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"news_tb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

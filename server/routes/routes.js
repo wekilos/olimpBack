@@ -73,6 +73,8 @@ router.get("/userCodes_tb",UserCodesControllers.userCodes_tb);
 // User Routes
 
 // router.get("/user/type",cache.get,UserTypeControllers.getUserType,cache.set);
+router.get("/user/all",cache.get,UserControllers.getAllUser,cache.set);
+router.get("/user/one/:id",cache.get,UserControllers.getOneUser,cache.set);
 router.post("/user/create",UserControllers.create);
 router.post("/user/login",UserControllers.login);
 router.patch("/user/update",UserControllers.update);
@@ -109,6 +111,7 @@ router.delete("/contact/delete/:id",ContactControllers.Delete);
 
 // Order 
 router.get("/order/all",OrderControllers.getAllOrders);
+router.get("/order/all/:UserId",OrderControllers.getAllOrdersOneUser);
 router.post("/order/create",OrderControllers.createOrder);
 router.post("/order/make",OrderControllers.makeOrder);
 router.post("/order/payment",OrderControllers.makePayment);
