@@ -69,7 +69,7 @@ var httpServer = http.createServer(app, (req, res) => {
 // htpps uchin son achmaly
 // var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8080, () => {
+httpServer.listen(8282, () => {
     console.log("working http server on 8181 port");
 });
 
